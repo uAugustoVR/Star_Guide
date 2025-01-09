@@ -4,5 +4,5 @@ from django.urls import path
 
 urlpatterns = [
     path('', index, name= 'index'),
-    path('imagem/', imagem, name= 'imagem'),
+    path('imagem/<int:photo_id>', imagem, name= 'imagem'),
 ]
