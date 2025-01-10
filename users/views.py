@@ -1,3 +1,4 @@
+from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
@@ -15,13 +16,20 @@ def log_in(request):
         password = form.cleaned_data.get('password')
         user_name = form.cleaned_data.get('user_name')
 
+        user_login = auth.authenticate(
+            request,
+            username=user_name,
+            password=password
+        )
+
         # Verificar se as senhas coincidem
-        if password != password:
+        if not user_login:
             messages.error(request, "Senha incorreta. Tente novamente.")
             return redirect('log in')
-        
-        messages.success(request, "Login realizado com sucesso!")
-        return redirect('index')
+        else:
+            auth.login(request, user_login)
+            messages.success(request, "Login realizado com sucesso!")
+            return redirect('index')
 
     return render(request, 'users/log_in.html', {"form": form})
 
