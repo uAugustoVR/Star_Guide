@@ -21,21 +21,25 @@
                         <ul class="cards__lista">
                             {% if cards %}
                             {% for photography in cards %}
-                            <li class="card">
-                                <a href="{% url 'imagem' photography.id %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/' %}{{ photography.photo }}" alt="foto">
-                                </a>
-                                <span class="card__tag">{{ photography.category }}</span>
-                                <div class="card__info">
-                                    <p class="card__titulo">{{ photography.name }}</p>
-                                    <div class="card__texto">
-                                        <p class="card__descricao">{{ photography.description }}</p>
-                                        <span>
-                                            <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
-                                        </span>
+                                <li class="card">
+                                    <a href="{% url 'imagem' photography.id %}">
+                                        {% if photography.photo == null or photography.photo == "" %}
+                                            <img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.png' %}" alt="foto">
+                                        {% else %}
+                                            <img class="card__imagem" src="{{ photography.photo.url }}" alt="foto">
+                                        {% endif %}
+                                    </a>
+                                    <span class="card__tag">{{ photography.category }}</span>
+                                    <div class="card__info">
+                                        <p class="card__titulo">{{ photography.name }}</p>
+                                        <div class="card__texto">
+                                            <p class="card__descricao">{{ photography.credit }}</p>
+                                            <span>
+                                                <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
                             {% endfor %}
                             {% endif %}
                         </ul>
