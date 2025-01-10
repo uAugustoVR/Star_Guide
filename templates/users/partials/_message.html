@@ -1,0 +1,50 @@
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const messages = [];
+        {% for message in messages %}
+        messages.push({
+            level: "{{ message.tags|escapejs }}", // Escapa caracteres especiais
+            text: "{{ message|escapejs }}" // Escapa caracteres especiais
+        });
+        {% endfor %}
+
+        if (messages.length > 0) {
+            const container = document.getElementById('alert-container');
+            messages.forEach(({ level, text }) => {
+                // Criar a div para a mensagem
+                const alertDiv = document.createElement('div');
+                alertDiv.style.padding = '10px';
+                alertDiv.style.margin = '10px auto';
+                alertDiv.style.borderRadius = '5px';
+                alertDiv.style.color = '#fff';
+                alertDiv.style.fontSize = '14px';
+                alertDiv.textContent = text;
+
+                // Estilo baseado no nível da mensagem
+                if (level === 'success') {
+                    alertDiv.style.backgroundColor = '#28a745';
+                } else if (level === 'error') {
+                    alertDiv.style.backgroundColor = '#dc3545';
+                } else if (level === 'info') {
+                    alertDiv.style.backgroundColor = '#17a2b8';
+                } else if (level === 'warning') {
+                    alertDiv.style.backgroundColor = '#ffc107';
+                    alertDiv.style.color = '#212529';
+                }
+
+                // Adicionar ao container e mostrar
+                container.appendChild(alertDiv);
+                container.style.display = 'block';
+
+                // Remover mensagem automaticamente após 5 segundos
+                setTimeout(() => {
+                    alertDiv.remove();
+                    if (!container.hasChildNodes()) {
+                        container.style.display = 'none';
+                    }
+                }, 5000);
+            });
+        }
+    });
+</script>
