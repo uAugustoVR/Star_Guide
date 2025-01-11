@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import User
 
 class photographs(models.Model):
     option_category = [
@@ -17,6 +18,13 @@ class photographs(models.Model):
     photo            = models.ImageField(upload_to="photos/%Y/%m/%d/", blank=True)
     publication      = models.BooleanField(default=False)
     date_publication = models.DateField(default=datetime.now, blank=False)
+    user             = models.ForeignKey(
+        to=User,
+        null=True,
+        blank=False,
+        related_name="user",
+        on_delete=models.SET_NULL,
+    )
 
     def __str__(self):
         return self.name

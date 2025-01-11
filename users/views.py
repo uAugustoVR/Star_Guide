@@ -24,7 +24,7 @@ def log_in(request):
 
         # Verificar se as senhas coincidem
         if not user_login:
-            messages.error(request, "Senha incorreta. Tente novamente.")
+            messages.error(request, "Nome do usuário ou senha incorreto.")
             return redirect('log in')
         else:
             auth.login(request, user_login)
@@ -43,21 +43,10 @@ def sign_up(request):
             return render(request, 'users/sign_up.html', {'form': form})
 
         password = form.cleaned_data.get('password')
-        password_2 = form.cleaned_data.get('password_2')
         first_name = form.cleaned_data.get('first_name')
         last_name = form.cleaned_data.get('last_name')
         user_name = form.cleaned_data.get('user_name')
         email = form.cleaned_data.get('email')
-
-        # Verificar se as senhas coincidem
-        if password != password_2:
-            messages.error(request, "As senhas não coincidem. Tente novamente.")
-            return redirect('sign up')
-
-        # Verificar se o nome de usuário já existe
-        if User.objects.filter(username=user_name).exists():
-            messages.error(request, "Este nome de usuário já está em uso. Escolha outro.")
-            return redirect('sign up')
 
         # Criar o usuário
         user = User.objects.create_user(username=user_name, email=email, password=password, first_name=first_name, last_name=last_name)
@@ -66,3 +55,8 @@ def sign_up(request):
         return redirect('log in')
     
     return render(request, 'users/sign_up.html', {"form": form})
+
+def log_out(request):
+    auth.logout(request)
+    messages.success(request, "Desconectado!")
+    return redirect('log in')

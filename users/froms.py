@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 
 class loginforms(forms.Form):
     user_name = forms.CharField(
@@ -32,7 +33,7 @@ class signupforms(forms.Form):
         widget=forms.TextInput(
             attrs={
                 "class": "form-control",
-                "placeholder": "Ex.: João Silva",
+                "placeholder": "Ex.: João_Silva",
             }
         )
     )
@@ -59,8 +60,8 @@ class signupforms(forms.Form):
         )
     )
     email = forms.EmailField(
-        label="Email",
-        required=True,
+        label="Email (opcional)",
+        required=False,
         max_length=100,
         widget=forms.EmailInput(
             attrs={
@@ -91,3 +92,21 @@ class signupforms(forms.Form):
             }
         )
     )
+    def clean_user_name(self):
+        user_name = self.cleaned_data.get("user_name")
+        user_name.strip()
+
+        if user_name and " " in user_name:
+            raise forms.ValidationError("Nome de usuário inválido. Somente letras e números são permitidos. Sem espaço.")
+        elif User.objects.filter(username=user_name).exists():
+            raise forms.ValidationError("Nome de usuário já existente. Tente novamente.")
+        else:
+            return user_name
+        
+    def clean_password_2(self):
+        password = self.cleaned_data.get("password")
+
+        if password != self.cleaned_data.get("password_2"):
+            raise forms.ValidationError("As senhas não coincidem. Tente novamente.")
+        else:
+            return password

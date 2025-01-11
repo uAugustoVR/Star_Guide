@@ -382,3 +382,22 @@ table {
     border: 2px solid #7B78E5;
     cursor: pointer;
 }
+
+.alert-box {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    display: none;
+}
+.alert-success { 
+    background-color: #12a835; 
+}
+.alert-error { 
+    background-color: #e4041a; 
+}
