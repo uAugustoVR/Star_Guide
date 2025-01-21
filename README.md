@@ -26,7 +26,7 @@
 
 1. Clone este repositório ou faça o download do arquivo `.zip`:
    ```bash
-   git clone https://github.com/seuusuario/Star_Guide.git
+   git clone https://...
    ```
 
 2. Navegue até o diretório do projeto:
@@ -63,35 +63,15 @@
    ```
    Siga as instruções para definir um nome de usuário, e-mail e senha. Após criado, acesse o painel administrativo em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
 
-## 🤝 Contribuindo
-
-Contribuições são sempre bem-vindas! Siga os passos abaixo para contribuir:
-
-1. Faça um fork do projeto.
-2. Crie uma branch para a sua feature:
-   ```bash
-   git checkout -b minha-feature
-   ```
-3. Commit suas mudanças:
-   ```bash
-   git commit -m 'Minha nova feature'
-   ```
-4. Faça o push da sua branch:
-   ```bash
-   git push origin minha-feature
-   ```
-5. Abra um Pull Request.
-
 ## 📝 Licença
 
-Este projeto está licenciado sob a licença [MIT/GPL/etc.]. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está dedicado ao domínio público sob a licença CC0 1.0 Universal (CC0 1.0). Isso significa que qualquer pessoa pode usar, modificar e redistribuir o código sem restrições. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 📧 Contato
 
 Se tiver dúvidas ou sugestões, entre em contato:
 
-- **Email**: [seu-email@exemplo.com]
-- **GitHub**: [https://github.com/seuusuario]
+- **GitHub**: [https://github.com/uAugustoVR]
 
 ---
 
