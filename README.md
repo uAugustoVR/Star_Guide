@@ -67,12 +67,6 @@
 
 Este projeto está dedicado ao domínio público sob a licença CC0 1.0 Universal (CC0 1.0). Isso significa que qualquer pessoa pode usar, modificar e redistribuir o código sem restrições. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 📧 Contato
-
-Se tiver dúvidas ou sugestões, entre em contato:
-
-- **GitHub**: [https://github.com/uAugustoVR]
-
 ---
 
 _Explore as estrelas com o **Star_Guide** e amplie seus horizontes!_
