@@ -105,6 +105,8 @@ table {
     align-items: center;
     background-color: transparent;
     border: none;
+    color:#D9D9D9; 
+    margin-bottom: 5px;
     font-size: 1rem;
     height: 24px;
     padding: 10px;

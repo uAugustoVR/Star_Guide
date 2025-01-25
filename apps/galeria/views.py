@@ -1,5 +1,5 @@
 from django.contrib import messages
-from galeria.models import photographs
+from apps.galeria.models import photographs
 from django.shortcuts import render, get_object_or_404, redirect
 
 def index(request):
@@ -13,7 +13,7 @@ def index(request):
 
 def imagem(request, photo_id):
     photography = get_object_or_404(photographs, pk=photo_id)
-    return render(request, 'galeria/imagem.html', {"photography": photography})
+    return render(request, 'galeria/image.html', {"photography": photography})
 
 def search(request):
     if not request.user.is_authenticated:

@@ -1,4 +1,4 @@
-from users.views import log_in, sign_up, log_out
+from apps.users.views import log_in, sign_up, log_out
 from django.urls import path
 
 urlpatterns = [

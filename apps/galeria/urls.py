@@ -1,4 +1,4 @@
-from galeria.views import index, imagem, search
+from apps.galeria.views import index, imagem, search
 from django.urls import path
 
 

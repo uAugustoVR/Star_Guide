@@ -1,5 +1,5 @@
 from django.contrib import admin
-from galeria.models import photographs
+from apps.galeria.models import photographs
 
 class list_photograpy(admin.ModelAdmin):
     list_display = ("id", "name", "credit", "date_publication", "publication")

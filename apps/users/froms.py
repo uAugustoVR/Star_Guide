@@ -104,9 +104,9 @@ class signupforms(forms.Form):
             return user_name
         
     def clean_password_2(self):
-        password = self.cleaned_data.get("password")
+        cleaned_data = self.cleaned_data.get("password")
 
-        if password != self.cleaned_data.get("password_2"):
+        if cleaned_data != self.cleaned_data.get("password_2"):
             raise forms.ValidationError("As senhas não coincidem. Tente novamente.")
         else:
-            return password
+            return cleaned_data
