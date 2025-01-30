@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
+from apps.galeria.rename import rename_photo
 
 class photographs(models.Model):
     option_category = [
@@ -15,8 +16,8 @@ class photographs(models.Model):
     category         = models.CharField(max_length=100, choices=option_category, default="")
     title            = models.CharField(max_length=100, null=True, blank=True, default="")
     text             = models.TextField(null=False, blank=False)
-    photo            = models.ImageField(upload_to="photos/%Y/%m/%d/", blank=True)
-    publication      = models.BooleanField(default=False)
+    photo            = models.ImageField(upload_to=rename_photo, blank=True)
+    publication      = models.BooleanField(default=True)
     date_publication = models.DateField(default=datetime.now, blank=False)
     user             = models.ForeignKey(
         to=User,

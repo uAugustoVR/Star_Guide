@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
-class loginforms(forms.Form):
+class LoginForms(forms.Form):
     user_name = forms.CharField(
         label="Nome de usuário",
         required=True,
@@ -25,7 +25,7 @@ class loginforms(forms.Form):
         )
     )
 
-class signupforms(forms.Form):
+class SignupForms(forms.Form):
     user_name = forms.CharField(
         label="Nome de usuário",
         required=True,

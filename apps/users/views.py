@@ -2,18 +2,18 @@ from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from apps.users.froms import loginforms, signupforms
-from .froms import signupforms
+from apps.users.forms import LoginForms, SignupForms
+from .forms import SignupForms
 
 def log_in(request):
     if request.user.is_authenticated:
         messages.warning(request, "Você já esta conectado!")
         return redirect('index')
     else:
-        form = loginforms()
+        form = LoginForms()
         
         if request.method == 'POST':
-            form = loginforms(request.POST)
+            form = LoginForms(request.POST)
 
             if not form.is_valid():
                 return render(request, 'users/log_in.html', {'form': form})
@@ -42,10 +42,10 @@ def sign_up(request):
         messages.warning(request, "Você já esta conectado!")
         return redirect('index')
     else:
-        form = signupforms()
+        form = SignupForms()
         
         if request.method == 'POST':
-            form = signupforms(request.POST)
+            form = SignupForms(request.POST)
 
             if not form.is_valid():
                 return render(request, 'users/sign_up.html', {'form': form})

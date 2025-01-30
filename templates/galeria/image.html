@@ -1,6 +1,12 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% block content %}
+        <section class="menu-lateral">
+            <nav class="menu-lateral__navegacao">
+                <a href="{% url 'update' photography.id %}"><img src="{% static '/assets/ícones/1x/update.png' %}"> Editar</a>
+                <a href="{% url 'delete' photography.id %}"><img src="{% static '/assets/ícones/1x/delete.png' %}"> Excluir</a>
+            </nav>
+        </section>
         <section class="conteudo">
             <section class="imagem">
                 <div class="imagem__conteudo">
