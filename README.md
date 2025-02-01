@@ -73,7 +73,7 @@
 
 ## 📝 Licença
 
-Este projeto está dedicado ao domínio público sob a licença CC0 1.0 Universal (CC0 1.0). Isso significa que qualquer pessoa pode usar, modificar e redistribuir o código sem restrições. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
