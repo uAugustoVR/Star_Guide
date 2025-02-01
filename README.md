@@ -1,3 +1,4 @@
+![Licença: CC BY-NC 4.0](https://img.shields.io/badge/Licença-CC%20BY--NC%204.0-blue)
 
 # Star_Guide
 
@@ -50,9 +51,9 @@
    ```bash
    cd scripts
    python secret_key_generator.py
-   EX.: SECRET_KEY = key....
    ```
    Copie e cole a toda a string da chave em um arquivo .env
+   EX.: SECRET_KEY = key....
 
 6. Execute o projeto:
    ```bash
@@ -71,9 +72,13 @@
    ```
    Siga as instruções para definir um nome de usuário, e-mail e senha. Após criado, acesse o painel administrativo em [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).
 
-## 📝 Licença
+## 📜 Licença
+Este projeto está licenciado sob a Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0).
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+📌 Isso significa que:
+✅ Você pode usar, modificar e compartilhar o código somente para fins não comerciais.
+🚫 O uso comercial deste código não é permitido sem a autorização do autor.
+🔗 Para mais detalhes, consulte os termos completos da [LICENSE](LICENSE): CC BY-NC 4.0
 
 ---
 

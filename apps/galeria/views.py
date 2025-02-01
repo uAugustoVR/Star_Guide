@@ -1,3 +1,7 @@
+# Licença: CC BY-NC 4.0
+# Este código pode ser usado, modificado e redistribuído **apenas para fins não comerciais**.
+# Mais detalhes: https://creativecommons.org/licenses/by-nc/4.0/
+
 import os 
 from django.conf import settings
 from django.contrib import messages

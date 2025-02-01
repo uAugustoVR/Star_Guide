@@ -1,3 +1,7 @@
+# Licença: CC BY-NC 4.0
+# Este código pode ser usado, modificado e redistribuído **apenas para fins não comerciais**.
+# Mais detalhes: https://creativecommons.org/licenses/by-nc/4.0/
+
 from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth.models import User
