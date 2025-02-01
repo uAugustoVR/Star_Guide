@@ -46,12 +46,20 @@
    pip install -r requirements.txt
    ```
 
-5. Execute o projeto:
+5. Gere uma nova chave para o Django:
+   ```bash
+   cd scripts
+   python secret_key_generator.py
+   EX.: SECRET_KEY = key....
+   ```
+   Copie e cole a toda a string da chave em um arquivo .env
+
+6. Execute o projeto:
    ```bash
    python manage.py runserver
    ```
 
-6. Acesse o site em [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+7. Acesse o site em [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
 ## 📖 Como Usar
 

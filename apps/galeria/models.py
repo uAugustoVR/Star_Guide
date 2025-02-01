@@ -24,7 +24,7 @@ class photographs(models.Model):
         null=True,
         blank=False,
         related_name="user",
-        on_delete=models.SET_NULL,
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):
