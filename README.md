@@ -78,7 +78,7 @@ Este projeto está licenciado sob a Creative Commons Atribuição-NãoComercial 
 📌 Isso significa que:
 ✅ Você pode usar, modificar e compartilhar o código somente para fins não comerciais.
 🚫 O uso comercial deste código não é permitido sem a autorização do autor.
-🔗 Para mais detalhes, consulte os termos completos da [LICENSE](LICENSE): CC BY-NC 4.0
+🔗 Para mais detalhes, consulte os termos completos da [LICENSE](LICENSE): [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ---
 
